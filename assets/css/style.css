@@ -1,0 +1,44 @@
+body {
+  background-image: url(../images/background-pattern-design-31.jpg);
+}
+p.title {
+  background-color: burlywood;
+  color: azure;
+  font-size: 50px;
+
+  display: inline-block;
+  /* float: left; */
+  margin: 5px 0 10px 5px;
+  padding: 5px;
+}
+
+.instructions {
+  display: inline-block;
+  float: none;
+  width: 890px;
+  background-color: beige;
+  color: green;
+  margin: 5px 0 5px 5px;
+}
+
+.targetScore {
+  height: 65px;
+  width: 125px;
+  background-color: lightseagreen;
+  float: left;
+}
+.tally {
+  height: 65px;
+  width: 125px;
+  background-color: aqua;
+  float: left;
+}
+.gems {
+  clear: both;
+}
+img {
+  clear: both;
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+}
