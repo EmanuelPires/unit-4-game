@@ -18,27 +18,43 @@ p.title {
   width: 890px;
   background-color: beige;
   color: green;
-  margin: 5px 0 5px 5px;
+  margin: 5px 0 0px 5px;
 }
-
+.thirdRow {
+  margin: 5px 0px 5px 5px;
+}
 .targetScore {
   height: 65px;
   width: 125px;
   background-color: lightseagreen;
   float: left;
+  margin-bottom: 10px;
 }
 .tally {
   height: 65px;
   width: 125px;
   background-color: aqua;
   float: left;
+  margin-bottom: 10px;
 }
 .gems {
   clear: both;
+  margin: 5px 10px 0px 5px;
 }
 img {
   clear: both;
   overflow: hidden;
   height: 100px;
   width: 100px;
+}
+.totalScoreLine {
+  background-color: lightseagreen;
+  display: inline-block;
+  width: 150px;
+  margin: 5px 0px 5px 0;
+}
+.totalScore {
+  height: 75px;
+  width: 150px;
+  background-color: lightseagreen;
 }

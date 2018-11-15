@@ -17,8 +17,12 @@
       media="screen"
       href="assets/css/style.css"
     />
-
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
+   
   </head>
   <body>
     <div><p class="title">Crystals Collector!</p></div>
@@ -38,21 +42,25 @@
         crystal.
       </p>
     </div>
-    <div >
+    <div class="thirdRow">
       <span><p class="targetScore"></p></span>
-      </div>
-      <div>
-        <span><p class="tally"></p></span>
+      
+      <div class="tally">
+        <span>Wins: </span><span id="wins"></span><br>
+        <span>Losses: </span><span id="losses"></span>
         </div>
+      </div>
         <br>
         <div class="gems">
-      <img src="assets/images/crystal-758810_640.jpg" alt="" />
-      <img src="assets/images/drusy-665521_640.jpg" alt="" />
-      <img src="assets/images/ice-crystal-1065155_640.jpg" alt="" />
-      <img src="assets/images/stone-6580_640.jpg" alt="" />
+      <img src="assets/images/crystal-758810_640.jpg" alt="" id="gem1"/>
+      <img src="assets/images/drusy-665521_640.jpg" alt="" id="gem2"/>
+      <img src="assets/images/ice-crystal-1065155_640.jpg" alt="" id="gem3"/>
+      <img src="assets/images/stone-6580_640.jpg" alt="" id="gem4"/>
     </div>
     </div>
-    <div><p>Your Total Score is:</p></div>
-    <div><p id="totalScore"></p></div>
+    <div class="totalScoreLine"><p>Your Total Score is:</p></div>
+
+    <div class="totalScore"><p id="totalScore"></p></div>
+  
   </body>
 </html>
