@@ -1,55 +1,38 @@
-// Generate a random number between 19-120
-var targetNumber;
-var crystal1;
-var crystal2;
-var crystal3;
-var crystal4;
-var userPointTally = 0;
 var wins = 0;
 var losses = 0;
-
-$(document).ready(function() {
-  targetNumber = Math.floor(Math.random() * 101 + 19);
-  console.log(targetNumber);
-
-  //Display the random targennumber
-  $(".targetScore").html(targetNumber);
-
-  //Generate a random value for each crystal between 1-12
-  crystal1 = Math.floor(Math.random() * 12 + 1);
-  crystal2 = Math.floor(Math.random() * 12 + 1);
-  crystal3 = Math.floor(Math.random() * 12 + 1);
-  crystal4 = Math.floor(Math.random() * 12 + 1);
-
-  // Display the value that comes from the crystal clicks and add them together
-  $("#gem1").on("click", function() {
-    userPointTally = userPointTally + crystal1;
-    $("#totalScore").html(userPointTally);
-  });
-  $("#gem2").on("click", function() {
-    userPointTally = userPointTally + crystal2;
-    $("#totalScore").html(userPointTally);
-  });
-  $("#gem3").on("click", function() {
-    userPointTally = userPointTally + crystal3;
-    $("#totalScore").html(userPointTally);
-  });
-  $("#gem4").on("click", function() {
-    userPointTally = userPointTally + crystal4;
-    $("#totalScore").html(userPointTally);
-  });
+var targetScore;
+var userScore = 0;
+var crystalPics = [
+  "https://i.redd.it/oh5jq6u9hjy11.jpg",
+  "https://external-preview.redd.it/xREzFkhNzrdGcloG9UC97U6UAmDxlJqOEHHvQ3CAyCc.jpg?auto=webp&s=29e7b02cf434789610d92e17ff978b8ede799dcd",
+  "https://i.redd.it/k4pcojucxhy11.png",
+  "https://i.redd.it/d22amc875jy11.jpg"
+];
+$("document").ready(function() {
+  setCrystalVal();
 });
-//check whether the user's number is equal to the target number
-// check whether the user's number is larger than the target number
-// if the number is larger add to the losses. and reset
-// if the number is equal add to the wins and reset
 
-$("document").on("click", function() {
-  if (userPointTally == targetNumber) {
-    wins++;
-  } else if (userPointTally > targetNumber) {
-    losses++;
+function setCrystalVal() {
+  targetScore = Math.floor(Math.random() * 101) + 19;
+  for (var i = 0; i < crystalPics.length; i++) {
+    crystalValue = Math.floor(Math.random() * 12) + 1;
+    var crystal = $("<img>");
+    crystal.attr("src", crystalPics[i]);
+    crystal.attr("class", "gems");
+    crystal.attr("data-crystalValue", crystalValue);
+    $(".gemsDiv").append(crystal);
   }
+  $(".targetScore").html(targetScore);
+  $(".gems").on("click", function() {
+    userScore += parseInt($(this).attr("data-crystalValue"));
+    userScoreDisplay = userScore;
+    $("#totalScore").html(userScoreDisplay);
+  });
+}
+if (userScoreDisplay == targetScore) {
+  wins++;
   $("#wins").html(wins);
+} else if (userScoreDisplay > targetScore) {
+  losses++;
   $("#losses").html(losses);
-});
+}
